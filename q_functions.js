@@ -1,7 +1,5 @@
-// --------- MQTT FUNKTIONER -------moja2024 ------
-
 const topic = "ASGBI";
-const afsenderID = "P5";
+const afsenderID = "PhoneSensor";
 
 const client = mqtt.connect("wss://broker.hivemq.com:8884/mqtt");
 
