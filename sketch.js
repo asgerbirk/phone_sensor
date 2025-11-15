@@ -1,7 +1,23 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(windowWidth, windowHeight);
+  angleMode(DEGREES);
 }
 
+let bg = 0;
+
 function draw() {
-  background(220);
+  background(bg);
+
+  if (orientationSensor.hasNewValue) {
+    let gyro = orientationSensor.get();
+    let alpha = gyro.alpha; // alpha, beta & gamma
+    console.log("SENDT (alpha): " + alpha);
+    sender(alpha);
+  }
+}
+
+const threshold = 10;
+
+function touchStarted() {
+  setupOrientation(threshold);
 }
