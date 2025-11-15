@@ -1,5 +1,5 @@
 const topic = "ASGBI";
-const afsenderID = "P5";
+const afsenderID = "iPhone";
 
 const client = mqtt.connect("wss://broker.hivemq.com:8884/mqtt");
 
