@@ -10,7 +10,7 @@ function draw() {
 
   if (orientationSensor.hasNewValue) {
     let gyro = orientationSensor.get();
-    let alpha = gyro.alpha; // alpha, beta & gamma
+    let alpha = gyro.alpha;
     console.log("SENDT (alpha): " + alpha);
     sender(alpha);
   }
