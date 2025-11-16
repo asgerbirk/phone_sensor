@@ -1,12 +1,8 @@
 function sender(x) {
-  besked = {
+  const besked = {
     from: afsenderID,
     val: x,
   };
   client.publish(topic, JSON.stringify(besked));
-}
-
-function mouseClicked() {
-  sender(mouseX);
-  console.log("klick" + sender);
+  console.log("SENT:", besked);
 }
