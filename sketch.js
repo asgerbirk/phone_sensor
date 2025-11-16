@@ -6,8 +6,6 @@ function setup() {
   textAlign(CENTER, CENTER);
   textSize(20);
 
-  // ======== KNAPPER =========
-
   // Venstre knap
   leftBtn = createButton("←");
   leftBtn.position(40, height / 2 - 60);
@@ -28,7 +26,11 @@ function setup() {
     sender(1); // flyt til højre
   });
 
-  // ======== SENSOR (UDKOMMENTERET) ========
+  extendBtn = createButton("↓");
+  extendBtn.position(width / 2 - 60, height / 2 + 80);
+  extendBtn.size(120, 80);
+  extendBtn.style("font-size", "40px");
+  extendBtn.mousePressed(() => sender("extend"));
 
   /*
   const threshold = 10;
@@ -41,8 +43,6 @@ function draw() {
   fill(255);
   text("Tryk ← eller → for at flytte fiskestangen", width / 2, height / 4);
 
-  // ======== SENSOR (UDKOMMENTERET) ========
-
   /*
   if (orientationSensor.hasNewValue) {
     let gyro = orientationSensor.get();
@@ -52,8 +52,6 @@ function draw() {
   }
   */
 }
-
-// ======== SENSOR TOUCH (UDKOMMENTERET) ========
 
 /*
 function touchStarted() {
