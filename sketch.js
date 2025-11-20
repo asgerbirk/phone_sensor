@@ -32,7 +32,7 @@ function setup() {
   extendBtn.mousePressed(() => sender("extend"));
 
   shortenBtn = createButton("↑");
-  shortenBtn.position(width / 2 - 60, height / 2 - 80);
+  shortenBtn.position(width / 2 - 60, height / 2 - 200);
   shortenBtn.size(120, 120);
   shortenBtn.style("font-size", "60px");
   shortenBtn.style("border-radius", "20px");
