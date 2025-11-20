@@ -69,4 +69,6 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
   leftBtn.position(40, height / 2 - 60);
   rightBtn.position(width - 160, height / 2 - 60);
+  extendBtn.position(width / 2 - 60, height / 2 + 80);
+  shortenBtn.position(width / 2 - 60, height / 2 - 80);
 }
