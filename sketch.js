@@ -26,14 +26,15 @@ function setup() {
 
   extendBtn = createButton("↓");
   extendBtn.position(width / 2 - 60, height / 2 + 80);
-  extendBtn.size(120, 80);
-  extendBtn.style("font-size", "40px");
+  extendBtn.size(120, 120);
+  extendBtn.style("font-size", "60px");
+  extendBtn.style("border-radius", "20px");
   extendBtn.mousePressed(() => sender("extend"));
 
   shortenBtn = createButton("↑");
   shortenBtn.position(width / 2 - 60, height / 2 - 80);
-  shortenBtn.size(120, 80);
-  shortenBtn.style("font-size", "40px");
+  shortenBtn.size(120, 120);
+  shortenBtn.style("font-size", "60px");
   shortenBtn.style("border-radius", "20px");
   shortenBtn.mousePressed(() => sender("shorten"));
 
