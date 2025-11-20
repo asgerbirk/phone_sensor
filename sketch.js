@@ -6,24 +6,22 @@ function setup() {
   textAlign(CENTER, CENTER);
   textSize(20);
 
-  // Venstre knap
   leftBtn = createButton("←");
   leftBtn.position(40, height / 2 - 60);
   leftBtn.size(120, 120);
   leftBtn.style("font-size", "60px");
   leftBtn.style("border-radius", "20px");
   leftBtn.mousePressed(() => {
-    sender(-1); // flyt til venstre
+    sender(-1);
   });
 
-  // Højre knap
   rightBtn = createButton("→");
   rightBtn.position(width - 160, height / 2 - 60);
   rightBtn.size(120, 120);
   rightBtn.style("font-size", "60px");
   rightBtn.style("border-radius", "20px");
   rightBtn.mousePressed(() => {
-    sender(1); // flyt til højre
+    sender(1);
   });
 
   extendBtn = createButton("↓");
@@ -31,6 +29,14 @@ function setup() {
   extendBtn.size(120, 80);
   extendBtn.style("font-size", "40px");
   extendBtn.mousePressed(() => sender("extend"));
+
+  shortenBtn = createButton("⬆️");
+  shortenBtn.position(width / 2 + 20, height / 2 + 80);
+  shortenBtn.size(120, 80);
+  shortenBtn.style("font-size", "40px");
+  shortenBtn.style("border-radius", "20px");
+  rightBtn.style("border-radius", "20px");
+  shortenBtn.mousePressed(() => sender("shorten"));
 
   /*
   const threshold = 10;
@@ -41,7 +47,6 @@ function setup() {
 function draw() {
   background(20);
   fill(255);
-  text("Tryk ← eller → for at flytte fiskestangen", width / 2, height / 4);
 
   /*
   if (orientationSensor.hasNewValue) {
