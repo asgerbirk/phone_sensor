@@ -30,12 +30,11 @@ function setup() {
   extendBtn.style("font-size", "40px");
   extendBtn.mousePressed(() => sender("extend"));
 
-  shortenBtn = createButton("⬆️");
-  shortenBtn.position(width / 2 + 20, height / 2 + 80);
+  shortenBtn = createButton("↑");
+  shortenBtn.position(width / 2 - 60, height / 2 - 80);
   shortenBtn.size(120, 80);
   shortenBtn.style("font-size", "40px");
   shortenBtn.style("border-radius", "20px");
-  rightBtn.style("border-radius", "20px");
   shortenBtn.mousePressed(() => sender("shorten"));
 
   /*
