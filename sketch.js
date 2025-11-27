@@ -1,4 +1,8 @@
-let leftBtn, rightBtn;
+let leftBtn, rightBtn, extendBtn, shortenBtn;
+
+//  multi-touch
+let rightPressed = false;
+let downPressed = false;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -24,12 +28,28 @@ function setup() {
     sender(1);
   });
 
+  // multi-touch: track when RIGHT is held
+  rightBtn.touchStarted(() => {
+    rightPressed = true;
+  });
+  rightBtn.touchEnded(() => {
+    rightPressed = false;
+  });
+
   extendBtn = createButton("↓");
   extendBtn.position(width / 2 - 60, height / 2 + 80);
   extendBtn.size(120, 120);
   extendBtn.style("font-size", "60px");
   extendBtn.style("border-radius", "20px");
   extendBtn.mousePressed(() => sender("extend"));
+
+  // multi-touch: track when DOWN is held
+  extendBtn.touchStarted(() => {
+    downPressed = true;
+  });
+  extendBtn.touchEnded(() => {
+    downPressed = false;
+  });
 
   shortenBtn = createButton("↑");
   shortenBtn.position(width / 2 - 60, height / 2 - 205);
@@ -47,15 +67,15 @@ function setup() {
 function draw() {
   background(20);
   fill(255);
+  text("Fishing Controller", width / 2, 60);
 
-  /*
-  if (orientationSensor.hasNewValue) {
-    let gyro = orientationSensor.get();
-    let alpha = gyro.alpha;
-    console.log("SENDT (alpha): " + alpha);
-    sender(alpha); // du kan slå denne til, hvis du vil bruge sensoren senere
+  if (rightPressed) {
+    sender(1);
   }
-  */
+
+  if (downPressed) {
+    sender("extend");
+  }
 }
 
 /*
