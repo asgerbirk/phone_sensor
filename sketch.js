@@ -1,6 +1,6 @@
 let leftBtn, rightBtn, extendBtn, shortenBtn;
 
-//  multi-touch
+// multi-touch
 let rightPressed = false;
 let downPressed = false;
 
@@ -15,25 +15,23 @@ function setup() {
   leftBtn.size(120, 120);
   leftBtn.style("font-size", "60px");
   leftBtn.style("border-radius", "20px");
-  leftBtn.mousePressed(() => {
-    sender(-1);
-  });
+  leftBtn.mousePressed(() => sender(-1));
 
   rightBtn = createButton("→");
   rightBtn.position(width - 160, height / 2 - 60);
   rightBtn.size(120, 120);
   rightBtn.style("font-size", "60px");
   rightBtn.style("border-radius", "20px");
-  rightBtn.mousePressed(() => {
-    sender(1);
-  });
+  rightBtn.mousePressed(() => sender(1));
 
-  // multi-touch: track when RIGHT is held
+  // RIGHT held
   rightBtn.touchStarted(() => {
     rightPressed = true;
+    return false;
   });
   rightBtn.touchEnded(() => {
     rightPressed = false;
+    return false;
   });
 
   extendBtn = createButton("↓");
@@ -41,14 +39,14 @@ function setup() {
   extendBtn.size(120, 120);
   extendBtn.style("font-size", "60px");
   extendBtn.style("border-radius", "20px");
-  extendBtn.mousePressed(() => sender("extend"));
 
-  // multi-touch: track when DOWN is held
   extendBtn.touchStarted(() => {
     downPressed = true;
+    return false;
   });
   extendBtn.touchEnded(() => {
     downPressed = false;
+    return false;
   });
 
   shortenBtn = createButton("↑");
@@ -57,11 +55,6 @@ function setup() {
   shortenBtn.style("font-size", "60px");
   shortenBtn.style("border-radius", "20px");
   shortenBtn.mousePressed(() => sender("shorten"));
-
-  /*
-  const threshold = 10;
-  setupOrientation(threshold);
-  */
 }
 
 function draw() {
@@ -77,13 +70,6 @@ function draw() {
     sender("extend");
   }
 }
-
-/*
-function touchStarted() {
-  const threshold = 10;
-  setupOrientation(threshold);
-}
-*/
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
